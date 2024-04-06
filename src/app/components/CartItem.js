@@ -1,6 +1,6 @@
 import { AiFillDelete } from "react-icons/ai";
 import { useDispatch } from "react-redux";
-import {  remove } from "../redux/CartSlice";
+import {  decrementQty, incrementQty, remove } from "../redux/CartSlice";
 import { toast } from "react-hot-toast";
 import { Minus, Plus } from "lucide-react";
 
@@ -32,8 +32,8 @@ const CartItem = ({ item, itemIndex }) => {
               <AiFillDelete />
             </div>
           </div>
-          <hr />
-          {/* <div className=" rounded-xl border border-gray-400 flex gap-3 items-center ">
+
+          <div style={{border:'2px solid black', borderRadius:'12px',width:'10rem'}} className="flex items-center">
             <button
               className="border-r border-gray-400 py-2 px-4"
               onClick={() => dispatch(decrementQty(item.id))}
@@ -47,7 +47,8 @@ const CartItem = ({ item, itemIndex }) => {
             >
               <Plus />
             </button>
-          </div> */}
+          </div>
+          
         </div>
       </div>
     </div>
